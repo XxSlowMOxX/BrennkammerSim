@@ -5,8 +5,18 @@
 #include <stdio.h>
 #include <fstream>
 
+#define NOTHING 0
+#define NEW 1
+#define BURN1 2
+#define BURN2 3
+#define BURNT 4
+
 cudaError_t addWithCuda(int *c, const int *a, const int *b, unsigned int size);
 cudaError_t simStep(int* c);
+
+const int chamberWidth = 200;
+const int chamberHeight = 200;
+const int chamberArrLen = chamberHeight * chamberWidth;
 
 __global__ void addKernel(int *c, const int *a, const int *b)
 {
@@ -17,6 +27,29 @@ __global__ void addKernel(int *c, const int *a, const int *b)
 
 __global__ void simStepKernel(int* c) {
     int i = threadIdx.x;
+}
+
+__global__ void simKernel(int* chamber) {
+    int x = threadIdx.x;
+    int y = threadIdx.y;
+    int cellnumber = (y * chamberWidth) + x;
+    switch (chamber[cellnumber]) {
+    case NOTHING:
+        return;
+        break;
+    case NEW:
+        if (chamber[cellnumber + chamberWidth] == BURN2 || chamber[cellnumber + 1] == BURN2) {
+            chamber[cellnumber] = BURN1;
+        }
+        return;
+        break;
+    case BURN1:
+        chamber[cellnumber] == BURN2;
+        return;
+        break;
+    default:
+        break;
+    }
 }
 
 int main()

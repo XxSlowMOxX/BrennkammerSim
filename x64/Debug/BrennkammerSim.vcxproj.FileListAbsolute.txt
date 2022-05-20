@@ -1,0 +1,2 @@
+C:\Users\MO-Admin\Downloads\BrennkammerSim\x64\Debug\BrennkammerSim.exe
+C:\Users\MO-Admin\Downloads\BrennkammerSim\x64\Debug\BrennkammerSim.pdb

@@ -1,7 +1,9 @@
 ﻿  Compiling CUDA source file kernel.cu...
   
-  C:\Users\morit\source\repos\BrennkammerSim>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7\bin\nvcc.exe" -gencode=arch=compute_52,code=\"sm_52,compute_52\" --use-local-env -ccbin "D:\VS2019\VC\Tools\MSVC\14.24.28314\bin\HostX86\x64" -x cu   -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7\include"  -G   --keep-dir x64\Debug  -maxrregcount=0  --machine 64 --compile -cudart static  -g  -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Fdx64\Debug\vc142.pdb /FS /Zi /RTC1 /MDd " -o C:\Users\morit\source\repos\BrennkammerSim\x64\Debug\kernel.cu.obj "C:\Users\morit\source\repos\BrennkammerSim\kernel.cu" 
-C:\Users\morit\source\repos\BrennkammerSim\kernel.cu(19): warning #177-D: variable "i" was declared but never referenced
+  C:\Users\MO-Admin\Downloads\BrennkammerSim>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7\bin\nvcc.exe" -gencode=arch=compute_52,code=\"sm_52,compute_52\" --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\bin\HostX86\x64" -x cu   -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7\include"  -G   --keep-dir x64\Debug  -maxrregcount=0  --machine 64 --compile -cudart static  -g  -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Fdx64\Debug\vc142.pdb /FS /Zi /RTC1 /MDd " -o C:\Users\MO-Admin\Downloads\BrennkammerSim\x64\Debug\kernel.cu.obj "C:\Users\MO-Admin\Downloads\BrennkammerSim\kernel.cu" 
+C:\Users\MO-Admin\Downloads\BrennkammerSim\kernel.cu(19): warning #177-D: variable "i" was declared but never referenced
   
   kernel.cu
-  BrennkammerSim.vcxproj -> C:\Users\morit\source\repos\BrennkammerSim\x64\Debug\BrennkammerSim.exe
+     Creating library C:\Users\MO-Admin\Downloads\BrennkammerSim\x64\Debug\BrennkammerSim.lib and object C:\Users\MO-Admin\Downloads\BrennkammerSim\x64\Debug\BrennkammerSim.exp
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  BrennkammerSim.vcxproj -> C:\Users\MO-Admin\Downloads\BrennkammerSim\x64\Debug\BrennkammerSim.exe
