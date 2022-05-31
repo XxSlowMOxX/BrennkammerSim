@@ -41,6 +41,8 @@ C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7\include\texture_types.h
 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7\include\vector_functions.h
 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7\include\vector_functions.hpp
 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7\include\vector_types.h
+D:\VS2019\VC\Tools\MSVC\14.24.28314\include\algorithm
+D:\VS2019\VC\Tools\MSVC\14.24.28314\include\cctype
 D:\VS2019\VC\Tools\MSVC\14.24.28314\include\cerrno
 D:\VS2019\VC\Tools\MSVC\14.24.28314\include\cfloat
 D:\VS2019\VC\Tools\MSVC\14.24.28314\include\climits
@@ -60,6 +62,7 @@ D:\VS2019\VC\Tools\MSVC\14.24.28314\include\initializer_list
 D:\VS2019\VC\Tools\MSVC\14.24.28314\include\intrin0.h
 D:\VS2019\VC\Tools\MSVC\14.24.28314\include\ios
 D:\VS2019\VC\Tools\MSVC\14.24.28314\include\iosfwd
+D:\VS2019\VC\Tools\MSVC\14.24.28314\include\iostream
 D:\VS2019\VC\Tools\MSVC\14.24.28314\include\istream
 D:\VS2019\VC\Tools\MSVC\14.24.28314\include\limits
 D:\VS2019\VC\Tools\MSVC\14.24.28314\include\limits.h
@@ -70,6 +73,7 @@ D:\VS2019\VC\Tools\MSVC\14.24.28314\include\sal.h
 D:\VS2019\VC\Tools\MSVC\14.24.28314\include\stdexcept
 D:\VS2019\VC\Tools\MSVC\14.24.28314\include\stdint.h
 D:\VS2019\VC\Tools\MSVC\14.24.28314\include\streambuf
+D:\VS2019\VC\Tools\MSVC\14.24.28314\include\string
 D:\VS2019\VC\Tools\MSVC\14.24.28314\include\system_error
 D:\VS2019\VC\Tools\MSVC\14.24.28314\include\typeinfo
 D:\VS2019\VC\Tools\MSVC\14.24.28314\include\type_traits

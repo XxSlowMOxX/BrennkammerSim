@@ -14,8 +14,9 @@
 #define BURN2 3
 #define BURNT 4
 
-#define CHAMBERWIDTH 10
-#define CHAMBERHEIGHT 10
+#define CHAMBERWIDTH 100
+#define CHAMBERHEIGHT 100
+#define SIMSTEPS 500
 
 cudaError_t simStep(int* chamber, int* newchamber);
 
@@ -58,6 +59,7 @@ int main()
     std::fill_n(chamber, chamberArrLen, NEW);
     chamber[CHAMBERWIDTH * 2] = BURN1;
 
+    /*
     for (int y = 0; y < CHAMBERHEIGHT; y++) {
         for (int x = 0; x < CHAMBERWIDTH; x++)
         {
@@ -65,23 +67,24 @@ int main()
         }
         std::cout << std::endl;
     }
+    */
 
     cudaError_t cudaStatus;
 
     std::string filename;
 
     int step = 0;
-    while (step < 5) {
+    while (step < SIMSTEPS) {
         cudaStatus = simStep(chamber, 0);
 
-        filename = "Brennkammer-" + std::to_string(step) + ".ppm";
+        filename = "Brennkammer-" + std::to_string(step);
 
         if (cudaStatus != cudaSuccess) {
             fprintf(stderr, "simulation failed at Step %d", step);
             return 1;
         }
 
-        std::ofstream img(filename);
+        std::ofstream img(filename + ".ppm");
         img << "P3\n";
         img << std::to_string(CHAMBERHEIGHT) << " " << std::to_string(CHAMBERWIDTH) << std::endl;
         img << "255" << std::endl;
@@ -115,6 +118,19 @@ int main()
         step++;
     }
 
+    std::cout << std::endl;
+
+    system("move Brennkammer-*.ppm Simulation");
+    system("magick convert Simulation\\Brennkammer-*.ppm Simulation\\Brennkammer.png");
+    system("del Simulation\\Brennkammer-*.ppm");
+
+    std::cout << "\nFiles have been converted to png \n";
+
+    system("magick convert -delay 25 Simulation\\Brennkammer-*.png Simulation\\Brennkammer.gif");
+    system("del Simulation\\Brennkammer-*.png");
+
+    std::cout << "Animation was created\n";
+
     cudaStatus = cudaDeviceReset();
     if (cudaStatus != cudaSuccess) {
         fprintf(stderr, "cudaDeviceReset failed!");
@@ -127,7 +143,6 @@ cudaError_t simStep(int* chamber, int* newchamber) {
     int* dev_chamber = 0;
     int* dev_newchamber = 0;
     cudaError_t cudaStatus;
-
 
     cudaStatus = cudaSetDevice(0); //set GPU
     if (cudaStatus != cudaSuccess) {
