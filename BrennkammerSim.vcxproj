@@ -82,6 +82,9 @@
   <ItemGroup>
     <ResourceCompile Include="BrennkammerSim.rc" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="PlotSurfaceArea.py" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 11.7.targets" />
